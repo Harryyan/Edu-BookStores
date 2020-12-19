@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebAPI_08_RepoPattern.Models
+{
+    public interface IEntity
+    {
+        public int Id { get; }
+    }
+}
