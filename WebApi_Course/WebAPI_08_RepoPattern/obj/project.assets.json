@@ -9301,11 +9301,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_08_RepoPattern\\WebAPI_08_RepoPattern.csproj",
+      "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_08_RepoPattern\\WebAPI_08_RepoPattern.csproj",
       "projectName": "WebAPI_08_RepoPattern",
-      "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_08_RepoPattern\\WebAPI_08_RepoPattern.csproj",
+      "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_08_RepoPattern\\WebAPI_08_RepoPattern.csproj",
       "packagesPath": "C:\\Users\\HarryYan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_08_RepoPattern\\obj\\",
+      "outputPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_08_RepoPattern\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

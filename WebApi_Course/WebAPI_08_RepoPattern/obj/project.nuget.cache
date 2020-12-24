@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+68+9zv1yX83QBgvHp/lJ85iu/IUmnH0Q/nsSJvo8kMUDY8xv5+hAPfreI912WW+mlMv7Xfg54mezIJpU2t6NQ==",
+  "dgSpecHash": "I7IfE/9M/RwoD2OZX76kTSwgzfMFHVt1ixkjhJSWrAsoHf6s5Y4USqCfHDDtJLGOBCVD2CsB45rgvRCWBa42Xw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_08_RepoPattern\\WebAPI_08_RepoPattern.csproj",
+  "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_08_RepoPattern\\WebAPI_08_RepoPattern.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HarryYan\\.nuget\\packages\\aspnetcore.authentication.apikey\\3.1.1\\aspnetcore.authentication.apikey.3.1.1.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

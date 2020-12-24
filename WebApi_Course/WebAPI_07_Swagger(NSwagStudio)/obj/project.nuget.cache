@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ss6f8RI7Pb0ugRBtmFZ1CHAMS/SmFWJXhgRABQmqfIj55uWmTrRrbT8T9BBCNFE7mtSC7Jvy4lRIemzV8m2G/g==",
+  "dgSpecHash": "8dT2a4pfSm4QVkl7oRm1B7UdhyiFnBDJ2CEMQJWLOgiC8z9aBZA4slpJcZ7g+FrmNDFxog8R43wh7kUtm1tDwQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_07_Swagger(NSwagStudio)\\WebAPI_07_Swagger.csproj",
+  "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_07_Swagger(NSwagStudio)\\WebAPI_07_Swagger.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HarryYan\\.nuget\\packages\\aspnetcore.authentication.apikey\\3.1.1\\aspnetcore.authentication.apikey.3.1.1.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
