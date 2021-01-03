@@ -9,13 +9,14 @@ namespace WebAPI_UnitTest
     {
         public static void Seed(this BookStoresDBContext dbContext)
         {
-            addSmapleDataUsing(dbContext);
+            addSmapleAuthorsDataUsing(dbContext);
+            addSmaplePublishersDataUsing(dbContext);
         }
 
 
         // Private
 
-        private static void addSmapleDataUsing(BookStoresDBContext dbContext)
+        private static void addSmapleAuthorsDataUsing(BookStoresDBContext dbContext)
         {
             dbContext.Authors.Add(new Author
             {
@@ -54,6 +55,38 @@ namespace WebAPI_UnitTest
                 State = "Auckland",
                 Zip = "0614",
                 EmailAddress = "test1@gmail.com",
+            });
+
+            dbContext.SaveChanges();
+        }
+
+        private static void addSmaplePublishersDataUsing(BookStoresDBContext dbContext)
+        {
+            dbContext.Publishers.Add(new Publisher
+            {
+               PubId = 1,
+               PublisherName = "Harry Yan",
+               City = "Auckland",
+               State = "Westgate",
+               Country = "NZ"
+            });
+
+            dbContext.Publishers.Add(new Publisher
+            {
+                PubId = 2,
+                PublisherName = "Lan",
+                City = "Auckland",
+                State = "Westgate",
+                Country = "NZ"
+            });
+
+            dbContext.Publishers.Add(new Publisher
+            {
+                PubId = 3,
+                PublisherName = "Snowbean",
+                City = "Auckland",
+                State = "Westgate",
+                Country = "NZ"
             });
 
             dbContext.SaveChanges();

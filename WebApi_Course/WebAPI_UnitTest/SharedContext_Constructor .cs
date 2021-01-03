@@ -15,7 +15,7 @@ namespace WebAPI_UnitTest
             this._output = output;
             _output.WriteLine("Execute constructor!");
         }
-
+         
         #region Test case
         [Fact(DisplayName = "SharedContext.Constructor.Case01")]
         public void TestCase01()
