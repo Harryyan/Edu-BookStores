@@ -8868,11 +8868,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_02_DB_First\\WebAPI_02_DB_First.csproj",
+      "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_02_DB_First\\WebAPI_02_DB_First.csproj",
       "projectName": "WebAPI_02_DB_First",
-      "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_02_DB_First\\WebAPI_02_DB_First.csproj",
+      "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_02_DB_First\\WebAPI_02_DB_First.csproj",
       "packagesPath": "C:\\Users\\HarryYan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_02_DB_First\\obj\\",
+      "outputPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_02_DB_First\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

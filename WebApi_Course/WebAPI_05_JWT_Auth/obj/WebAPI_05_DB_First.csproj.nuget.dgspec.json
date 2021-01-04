@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj": {}
+    "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj": {
+    "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj",
+        "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj",
         "projectName": "WebAPI_05_DB_First",
-        "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj",
+        "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj",
         "packagesPath": "C:\\Users\\HarryYan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_05_JWT_Auth\\obj\\",
+        "outputPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

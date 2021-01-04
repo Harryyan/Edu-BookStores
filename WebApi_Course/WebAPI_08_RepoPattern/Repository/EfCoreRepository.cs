@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace WebAPI_08_RepoPattern.Repository
         where TContext : DbContext
     {
 
-        private readonly TContext context;
+        public readonly TContext context;
 
         public EfCoreRepository(TContext context)
         {
@@ -20,7 +21,7 @@ namespace WebAPI_08_RepoPattern.Repository
         }
 
 
-       public async Task<TEntity> Add(TEntity entity)
+        public async Task<TEntity> Add(TEntity entity)
         {
             // when you don't know the entity type you want to play with,
             // it will create a DBSet used to query.
@@ -43,14 +44,14 @@ namespace WebAPI_08_RepoPattern.Repository
             await context.SaveChangesAsync();
 
             return entity;
-        }   
+        }
 
         public async Task<TEntity> Get(int id)
         {
             return await context.Set<TEntity>().FindAsync(id);
         }
 
-        public async Task<List<TEntity>>GetAll()
+        public async Task<List<TEntity>> GetAll()
         {
             return await context.Set<TEntity>().ToListAsync();
         }
@@ -60,6 +61,34 @@ namespace WebAPI_08_RepoPattern.Repository
             context.Entry(entity).State = EntityState.Modified;
             await context.SaveChangesAsync();
             return entity;
+        }
+
+        public async Task<IActionResult> Put(int id, TEntity entity)
+        {
+            if (id != entity.Id)
+            {
+                return null;
+            }
+
+            context.Entry(entity).State = EntityState.Modified;
+
+            try
+            {
+                await context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (Get(id) == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return null;
         }
     }
 }

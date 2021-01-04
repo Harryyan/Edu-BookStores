@@ -7,66 +7,23 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAPI_08_RepoPattern.Models;
+using WebAPI_08_RepoPattern.Repository;
 
 namespace WebAPI_08_RepoPattern.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class PublishersController : ControllerBase
+    public class PublishersController : BaseDBController<Publisher, EfCorePublisherRepository>
     {
-        private readonly BookStoresDBContext _context;
-
-        public PublishersController(BookStoresDBContext context)
+        public PublishersController(EfCorePublisherRepository repository) : base(repository)
         {
-            _context = context;
-        }
-
-        // GET: api/Publishers
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Publisher>>> GetPublishers()
-        {
-            return await _context.Publishers.ToListAsync();
-        }
-
-        // GET: api/Publishers/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Publisher>> GetPublisher(int id)
-        {
-            var publisher = await _context.Publishers.FindAsync(id);
-
-            if (publisher == null)
-            {
-                return NotFound();
-            }
-
-            return publisher;
         }
 
         // GET: api/Publishers/5
         [HttpGet("GetPublisherDetails/{id}")]
         public async Task<ActionResult<Publisher>> GetPublisherDetails(int id)
         {
-            var publisher = await _context.Publishers.SingleAsync(pub => pub.PubId == id);
-
-            _context.Entry(publisher)
-                .Collection(pub => pub.Users)
-                .Query()
-                .Where(usr => usr.EmailAddress.Contains("ha"))
-                .Load();
-
-            _context.Entry(publisher)
-                .Collection(pub => pub.Books)
-                .Query()
-                .Include(book => book.Sales)
-                .Load();
-
-            if (publisher == null)
-            {
-                return NotFound();
-            }
-
-            return publisher;
+            return await repository.GetPublisherDetails(id);
         }
 
         // PUT: api/Publishers/5
@@ -75,30 +32,7 @@ namespace WebAPI_08_RepoPattern.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPublisher(int id, Publisher publisher)
         {
-            if (id != publisher.PubId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(publisher).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PublisherExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return await repository.Put(id, publisher);
         }
 
         // POST: api/Publishers
@@ -107,31 +41,9 @@ namespace WebAPI_08_RepoPattern.Controllers
         [HttpPost]
         public async Task<ActionResult<Publisher>> PostPublisher(Publisher publisher)
         {
-            _context.Publishers.Add(publisher);
-            await _context.SaveChangesAsync();
+            repository.Add(publisher);
 
             return CreatedAtAction("GetPublisher", new { id = publisher.PubId }, publisher);
-        }
-
-        // DELETE: api/Publishers/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Publisher>> DeletePublisher(int id)
-        {
-            var publisher = await _context.Publishers.FindAsync(id);
-            if (publisher == null)
-            {
-                return NotFound();
-            }
-
-            _context.Publishers.Remove(publisher);
-            await _context.SaveChangesAsync();
-
-            return publisher;
-        }
-
-        private bool PublisherExists(int id)
-        {
-            return _context.Publishers.Any(e => e.PubId == id);
         }
     }
 }

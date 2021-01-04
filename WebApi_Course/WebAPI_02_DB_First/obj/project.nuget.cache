@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q16MRyRIC4LLb9Te312M8ivsy5x8fXGVQRohGbBf8c4pBF48/z8xPhyRtVevnaOLSn3jjWDDP8Q+1kkIiwoHOg==",
+  "dgSpecHash": "YesZTgU0IRqtz3Zozz2khE2rK3c3PIeJOjX+8g0Fpvl+DMY9xHM/Nwc00n2TIcEUW9Vwb51tGVAvtJXqMmu6OQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebApi_Course\\WebAPI_02_DB_First\\WebAPI_02_DB_First.csproj",
+  "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_02_DB_First\\WebAPI_02_DB_First.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HarryYan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

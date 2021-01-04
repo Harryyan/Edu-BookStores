@@ -14,7 +14,7 @@ namespace WebAPI_08_RepoPattern.Controllers
         where TEntity : class, IEntity
         where TRepository : IRepository<TEntity>
     {
-        private readonly TRepository repository;
+        public readonly TRepository repository;
 
         public BaseDBController(TRepository repository)
         {
