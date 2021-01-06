@@ -34,6 +34,10 @@ namespace WebAPI_08_RepoPattern.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
+            if (await _context.Users.ToListAsync() == null) {
+                return NotFound();
+            }
+
             return await _context.Users.ToListAsync();
         }
 

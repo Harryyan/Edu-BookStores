@@ -336,3 +336,6 @@ C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_08_RepoPatte
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_08_RepoPattern\obj\Debug\netcoreapp3.1\WebAPI_08_RepoPattern.dll
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_08_RepoPattern\obj\Debug\netcoreapp3.1\WebAPI_08_RepoPattern.pdb
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_08_RepoPattern\obj\Debug\netcoreapp3.1\WebAPI_08_RepoPattern.genruntimeconfig.cache
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_08_RepoPattern\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.IBookStores - Web Deploy.json
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_08_RepoPattern\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_08_RepoPattern\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\IBookStores - Web Deploy\profile.arm.json
