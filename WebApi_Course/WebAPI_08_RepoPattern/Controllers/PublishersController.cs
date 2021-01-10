@@ -41,9 +41,9 @@ namespace WebAPI_08_RepoPattern.Controllers
         [HttpPost]
         public async Task<ActionResult<Publisher>> PostPublisher(Publisher publisher)
         {
-            repository.Add(publisher);
+            var result = await repository.Add(publisher);
 
-            return CreatedAtAction("GetPublisher", new { id = publisher.PubId }, publisher);
+            return CreatedAtAction("GetPublisher", new { id = result.Id }, result);
         }
     }
 }
