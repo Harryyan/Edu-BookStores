@@ -490,3 +490,6 @@ C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_UnitTest\obj
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_UnitTest\obj\Debug\netcoreapp3.1\WebAPI_UnitTest.dll
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_UnitTest\obj\Debug\netcoreapp3.1\WebAPI_UnitTest.pdb
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_UnitTest\obj\Debug\netcoreapp3.1\WebAPI_UnitTest.genruntimeconfig.cache
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_UnitTest\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.IBookStores - Web Deploy.json
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_UnitTest\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\WebApi_Course\WebAPI_UnitTest\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\IBookStores - Web Deploy\profile.arm.json

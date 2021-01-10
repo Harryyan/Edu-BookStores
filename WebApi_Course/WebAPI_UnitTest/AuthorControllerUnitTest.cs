@@ -24,7 +24,7 @@ namespace WebAPI_UnitTest
 
             dbContext.Dispose();
 
-            // Assert
+            // Asserts
             Assert.True(value.Count == 3);
         }
 
