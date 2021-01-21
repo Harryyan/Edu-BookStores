@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K8LeIepHvsPt+g1PxL8hCp19B6gEapLQuyu+GcK0xgtFlNvs+QiDmqoCyRsRme5Y96kFwKPUFz3/0PbqyTEWJg==",
+  "dgSpecHash": "EFAd7e8mtM5WmJuA+oFVEiHBEfoU4zPx1/cxmrjy0Lx89ilDDY5OBwpp58FuCsIqvm1Brrq0HLQqZ3DTCbNRnA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Knowledge\\Platform\\WebAPI_01\\WebAPI_01\\WebAPI_01.csproj",
+  "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_01_Code_first\\WebAPI_01\\WebAPI_01.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HarryYan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

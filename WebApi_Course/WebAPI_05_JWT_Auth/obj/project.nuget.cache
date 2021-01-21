@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "OqXeIYK9UCAhfXIg2i5M35d12O7SnP5u1DccwHZ9CWwWSjM82rdujByXP11+Fhn78xd5K2tRNC6uz7UF7sI+oA==",
+  "dgSpecHash": "/kSzUCjJ0FSuqBRjhgvWtXaZHHtGcBf9eoos9ygRMViltHu6F+N3QA+GjI28Hs9PyLf0NdyDsBNQVQGExP6dEQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HarryYan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.10\\microsoft.aspnetcore.authentication.jwtbearer.3.1.10.nupkg.sha512",
+    "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.11\\microsoft.aspnetcore.authentication.jwtbearer.3.1.11.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.10\\microsoft.aspnetcore.jsonpatch.3.1.10.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.10\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.10.nupkg.sha512",
