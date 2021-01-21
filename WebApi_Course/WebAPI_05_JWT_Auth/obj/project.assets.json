@@ -8993,9 +8993,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj",
-      "projectName": "WebAPI_05_DB_First",
-      "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj",
+      "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_JWT_Auth.csproj",
+      "projectName": "WebAPI_05_JWT_Auth",
+      "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_JWT_Auth.csproj",
       "packagesPath": "C:\\Users\\HarryYan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\obj\\",
       "projectStyle": "PackageReference",

@@ -8993,9 +8993,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_DB_First.csproj",
-      "projectName": "WebAPI_06_DB_First",
-      "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_DB_First.csproj",
+      "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_JWT_Auth_Refresh.csproj",
+      "projectName": "WebAPI_06_JWT_Auth_Refresh",
+      "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_JWT_Auth_Refresh.csproj",
       "packagesPath": "C:\\Users\\HarryYan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\obj\\",
       "projectStyle": "PackageReference",
@@ -9016,6 +9016,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -9027,6 +9028,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
@@ -9073,7 +9075,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

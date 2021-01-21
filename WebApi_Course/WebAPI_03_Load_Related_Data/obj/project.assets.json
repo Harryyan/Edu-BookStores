@@ -8962,9 +8962,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_03_Load_Related_Data\\WebAPI_03_DB_First.csproj",
-      "projectName": "WebAPI_03_DB_First",
-      "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_03_Load_Related_Data\\WebAPI_03_DB_First.csproj",
+      "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_03_Load_Related_Data\\WebAPI_03_Load_Related_Data.csproj",
+      "projectName": "WebAPI_03_Load_Related_Data",
+      "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_03_Load_Related_Data\\WebAPI_03_Load_Related_Data.csproj",
       "packagesPath": "C:\\Users\\HarryYan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_03_Load_Related_Data\\obj\\",
       "projectStyle": "PackageReference",

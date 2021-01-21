@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI_06_DB_First", "WebAPI_06_DB_First.csproj", "{5728255E-48B2-45D7-91D4-3D9E81658BBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI_04_Basic_Auth", "WebAPI_04_Basic_Auth.csproj", "{5728255E-48B2-45D7-91D4-3D9E81658BBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

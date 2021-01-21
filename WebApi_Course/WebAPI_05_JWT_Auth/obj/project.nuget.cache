@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/kSzUCjJ0FSuqBRjhgvWtXaZHHtGcBf9eoos9ygRMViltHu6F+N3QA+GjI28Hs9PyLf0NdyDsBNQVQGExP6dEQ==",
+  "dgSpecHash": "M91K2YcFxU+kNLVkAcRrLKTmMj9mgbF4rTLqxGJIl56hFA2nylGvQgJIOUSPSMMvTuwGozAF04P8hO46ds7/ew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_DB_First.csproj",
+  "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_05_JWT_Auth\\WebAPI_05_JWT_Auth.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HarryYan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.11\\microsoft.aspnetcore.authentication.jwtbearer.3.1.11.nupkg.sha512",

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_DB_First.csproj": {}
+    "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_JWT_Auth_Refresh.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_DB_First.csproj": {
+    "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_JWT_Auth_Refresh.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_DB_First.csproj",
-        "projectName": "WebAPI_06_DB_First",
-        "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_DB_First.csproj",
+        "projectUniqueName": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_JWT_Auth_Refresh.csproj",
+        "projectName": "WebAPI_06_JWT_Auth_Refresh",
+        "projectPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\WebAPI_06_JWT_Auth_Refresh.csproj",
         "packagesPath": "C:\\Users\\HarryYan\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\obj\\",
         "projectStyle": "PackageReference",
