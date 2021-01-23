@@ -9,16 +9,19 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedModule } from './shared/shared.module';
 
 import { GlobalEventService } from './core/services/global/global-event.service';
-import { OfferService } from './core/services/offer/offer.service';
+import { UserService } from './core/services/user/user.service';
 
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { TopNavComponent } from './core/components/top-nav/top-nav.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopNavComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       maxAge: 25
     })
   ],
-  providers: [],
+  providers: [GlobalEventService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
