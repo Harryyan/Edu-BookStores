@@ -155,3 +155,12 @@ C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\obj\Deb
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\obj\Debug\netcoreapp3.1\BookStoresBackend.dll
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\obj\Debug\netcoreapp3.1\BookStoresBackend.pdb
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\obj\Debug\netcoreapp3.1\BookStoresBackend.genruntimeconfig.cache
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\bin\Debug\netcoreapp3.1\Scrutor.dll
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\obj\Debug\netcoreapp3.1\BookStoresBackend.csprojAssemblyReference.cache
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\obj\Debug\netcoreapp3.1\BookStoresBackend.MvcApplicationPartsAssemblyInfo.cs
