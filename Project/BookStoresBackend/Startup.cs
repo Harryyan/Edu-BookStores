@@ -61,19 +61,28 @@ namespace BookStoresBackend
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(ui => ui.SwaggerEndpoint("/swagger/v1.0/swagger.json", "Book Store API Doc"));
             }
 
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
             app.UseHttpsRedirection();
+
+            DefaultFilesOptions options = new DefaultFilesOptions();
+            options.DefaultFileNames.Clear();
+            options.DefaultFileNames.Add("index.html");
+
+            app.UseDefaultFiles(options).UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthentication();
 
             app.UseAuthorization();
-
-            app.UseSwagger();
-
-            app.UseSwaggerUI(ui => ui.SwaggerEndpoint("/swagger/v1.0/swagger.json", "Book Store API Doc"));
 
             app.UseEndpoints(endpoints =>
             {
