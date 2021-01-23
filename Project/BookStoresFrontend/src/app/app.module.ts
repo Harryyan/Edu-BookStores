@@ -16,12 +16,14 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TopNavComponent } from './core/components/top-nav/top-nav.component';
+import { LayoutComponent } from './core/components/layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
