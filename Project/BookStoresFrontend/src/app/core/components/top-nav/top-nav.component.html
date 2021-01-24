@@ -1,1 +1,10 @@
-<p>top-nav works!</p>
+<p-menubar [model]="items">
+    <ng-template pTemplate="start">
+      <img src="assets/images/logo.png" height="40" class="p-mr-2" alt="brand logo">
+    </ng-template>
+  
+    <ng-template pTemplate="end">
+      <p-dropdown [options]="languages" [(ngModel)]="currentLanguage" optionLabel="name" (onChange)="onLanguageChange($event)"></p-dropdown>
+    </ng-template>
+  </p-menubar>
+  

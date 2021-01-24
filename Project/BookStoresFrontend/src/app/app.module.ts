@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -11,23 +13,19 @@ import { SharedModule } from './shared/shared.module';
 import { GlobalEventService } from './core/services/global/global-event.service';
 import { UserService } from './core/services/user/user.service';
 
-import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { TopNavComponent } from './core/components/top-nav/top-nav.component';
-import { LayoutComponent } from './core/components/layout/layout.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TopNavComponent,
-    PageNotFoundComponent,
-    LayoutComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
     SharedModule,
     TranslateModule.forRoot({
       loader: {

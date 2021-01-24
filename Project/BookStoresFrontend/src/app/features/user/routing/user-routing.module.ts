@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LayoutComponent } from '../../../core/components/layouts/main/layout.component';
+import { LayoutComponent } from '../../../core/components/layout/layout.component';
 
 import { UserlistComponent } from '../user-list/user-list.component'
 
@@ -14,7 +14,7 @@ const routes: Routes = [
         redirectTo: 'userlist'
       },
       {
-        path: 'userlist', component: UserlistComponent, data: { title: 'Offers List'}
+        path: 'userlist', component: UserlistComponent, data: { title: 'Users List'}
       },
     ]
   }

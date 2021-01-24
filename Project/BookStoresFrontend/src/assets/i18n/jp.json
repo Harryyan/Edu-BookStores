@@ -1,0 +1,60 @@
+{
+  "primeng": {
+    "startsWith": "で始まる",
+    "contains": "含まれています",
+    "notContains": "含まれていません",
+    "endsWith": "で終わる",
+    "equals": "等しい",
+    "notEquals": "等しくない",
+    "lt": "未満",
+    "lte": "以下",
+    "gt": "大なり記号",
+    "gte": "以上以上",
+    "is": "です",
+    "isNot": "ではありません",
+    "before": "前",
+    "after": "後",
+    "clear": "晴れ",
+    "apply": "適用する",
+    "matchAll": "すべて一致",
+    "matchAny": "任意に一致",
+    "addRule": "ルールを追加",
+    "removeRule": "ルールを削除する",
+    "accept": "はい",
+    "reject": "ない",
+    "choose": "選択",
+    "upload": "アップロード",
+    "cancel": "キャンセル",
+    "dayNames": ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"],
+    "dayNamesShort": ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"],
+    "dayNamesMin": ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"],
+    "monthNames": ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
+    "monthNamesShort": ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
+    "today": "今日",
+    "weekHeader": "週間"
+  },
+  "demo": {
+    "calendar": "カレンダー",
+    "products": "製品",
+    "dashboard": "ダッシュボード",
+    "profile": "プロフィール",
+    "user": "オファー",
+    "weatherforecasts": "気象予報",
+    "button": {
+      "create": "作成する",
+      "cancel": "取消"
+    },
+    "user": {
+      "newOffer": "新しいオファー",
+      "title": "題名",
+      "description": "説明",
+      "startDateTime": "開始日時",
+      "endDateTime": "終了日時",
+      "isRespawning": "繰り返し可能",
+      "respawnStartTime": "リスポーン開始時間",
+      "endDateError": "終了日時は開始日時より後でなければなりません",
+      "respawnStartTimeError": "繰り返し可能なオファーには、リスポーン開始日時が必要です",
+      "id": "Id"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+.layout-wrapper {
+    .layout-topbar {
+        height: 70px;
+        background-color: $topbarBgColor;
+        border-bottom: 2px $topbarBorderColor;
+        box-shadow: 0 0 4px rgba(0,0,0,.25);
+        padding: 1em;
+        position: fixed;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 35px;
+        left: 0;
+        top: 0;
+        z-index: 999;
+
+        .menu-btn {
+            display: inline-block;
+            vertical-align: middle;
+
+            i {
+                font-size: 1.5em;
+            }
+        }
+
+        .logo {
+            margin-left: 1.25em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .topbar-button {
+            @include border-radius(20px);
+            border: 2px dotted $topbarButtonBorderColor;
+            background: $topbarButtonBgColor;
+            color: $topbarButtonTextColor;
+            height: 2em;
+            min-width: 2em;
+            float: right;
+            display: block;
+            font-size: 1em;
+
+            .ui-button-icon-right {
+                width: 1em;
+                height: 1em;
+            }
+        }
+
+        .topbar-menu {
+            list-style-type: none;
+            padding: 0;
+            height: 100%;
+            margin: 0 0 0 auto;
+            display: flex;
+        }
+
+        li {
+          height: 70px;
+          line-height: 70px;
+
+          .topbar-submenu {
+            position: relative;
+          }
+
+        a {
+            text-decoration: none;
+            color: $layoutMaskBgColor;
+            min-width: 120px;
+            font-size: 16px;
+            display: block;
+            text-align: center;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            line-height: 68px;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom-color .2s;
+            cursor: pointer;
+        }
+      }
+    }
+}
+
+@media (max-width: 1024px) {
+    .layout-wrapper {
+        .layout-topbar {
+            .topbar-button {
+                .ui-button-text {
+                    display: none;
+                }
+
+                .ui-button-icon-right {
+                    right: 50%;
+                    margin-right: -.6em;
+                }
+            }
+        }
+    }
+}

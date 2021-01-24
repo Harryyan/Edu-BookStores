@@ -13,12 +13,14 @@ import { MessageModule } from 'primeng/message';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { TopNavComponent } from '../core/components/top-nav/top-nav.component';
-import { LayoutComponent } from '../core/components/layouts/main/layout.component';
+import { LayoutComponent } from '../core/components/layout/layout.component';
+import { PageNotFoundComponent } from '../core/components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     TopNavComponent,
-    LayoutComponent
+    LayoutComponent,
+    PageNotFoundComponent
   ],
   imports: [
     FormsModule,
