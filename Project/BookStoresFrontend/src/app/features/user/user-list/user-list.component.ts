@@ -11,5 +11,4 @@ export class UserlistComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
