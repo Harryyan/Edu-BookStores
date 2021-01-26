@@ -34,11 +34,11 @@
     "weekHeader": "週間"
   },
   "demo": {
-    "calendar": "カレンダー",
+    "book": "カレンダー",
     "products": "製品",
     "dashboard": "ダッシュボード",
     "profile": "プロフィール",
-    "user": "オファー",
+    "users": "オファー",
     "weatherforecasts": "気象予報",
     "button": {
       "create": "作成する",

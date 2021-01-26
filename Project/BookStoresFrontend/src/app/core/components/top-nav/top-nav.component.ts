@@ -41,12 +41,12 @@ export class TopNavComponent implements OnInit {
     return [
       {
         label: this.translateService.instant("demo.users"),
-        icon: 'pi pi-list',
+        icon: 'pi pi-users',
         routerLink: ['/users/userlist'],
         routerLinkActiveOptions: { exact:true }
       },
       {
-        label: this.translateService.instant("demo.calendar"),
+        label: this.translateService.instant("demo.book"),
         icon: 'pi pi-calendar-plus',
         routerLink: ['/users/calendar'],
         routerLinkActiveOptions: { exact:true }
@@ -56,7 +56,7 @@ export class TopNavComponent implements OnInit {
       //   icon: 'pi pi-globe',
       //   routerLink: ['/weatherforecasts'],
       //   routerLinkActiveOptions: { exact:true }
-      // },    
+      // },
     ];
   }
 }
