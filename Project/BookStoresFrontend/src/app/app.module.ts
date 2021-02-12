@@ -16,7 +16,7 @@ import { UserService } from './core/services/user/user.service';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { BookListComponent } from './features/book-list/book-list.component';
+import { BookListComponent } from './features/book/book-list/book-list.component';
 
 @NgModule({
   declarations: [
