@@ -21,7 +21,7 @@ namespace BookStoresBackend
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // config DI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -55,7 +55,7 @@ namespace BookStoresBackend
             services.AddCors();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // config pipes
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

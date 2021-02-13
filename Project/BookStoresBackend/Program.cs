@@ -13,9 +13,11 @@ namespace BookStoresBackend
     {
         public static void Main(string[] args)
         {
+            // start up server
             CreateHostBuilder(args).Build().Run();
         }
 
+        // config web server
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
