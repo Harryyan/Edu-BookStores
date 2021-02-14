@@ -9,7 +9,7 @@ using BookStores.Models;
 
 namespace BookStoresBackend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -23,7 +23,8 @@ namespace BookStoresBackend.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] User user)
         {
-            var result = await _context.Users.FindAsync(user.EmailAddress);
+            //var result = await _context.Users.FindAsync(user.EmailAddress);
+
             return Ok();
         }
 
