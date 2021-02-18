@@ -23,8 +23,6 @@ namespace BookStoresBackend.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] User user)
         {
-            //var result = await _context.Users.FindAsync(user.EmailAddress);
-
             return Ok();
         }
 

@@ -21,14 +21,12 @@ namespace BookStoresBackend.Controllers
             _context = context;
         }
 
-        // GET: api/Users
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
 
-        // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -42,9 +40,6 @@ namespace BookStoresBackend.Controllers
             return user;
         }
 
-        // PUT: api/Users/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
@@ -86,7 +81,6 @@ namespace BookStoresBackend.Controllers
             return CreatedAtAction("GetUser", new { id = user.UserId }, user);
         }
 
-        // DELETE: api/Users/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(int id)
         {
