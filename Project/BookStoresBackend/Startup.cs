@@ -30,22 +30,18 @@ namespace BookStoresBackend
         {
             services.AddControllers();
 
-            services.AddDbContext<BookStoresDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BookStoresDB")));
+            // DB Context
+            var connectionString = Configuration.GetConnectionString("BookStoresDB");
+            services.AddDbContext<BookStoresDBContext>(options => options.UseSqlServer(connectionString));
 
-            services.AddMvc(option => option.EnableEndpointRouting = false)
-                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
+            services.AddMvc()
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
-            // Swagger : generate json endpoint
             services.AddSwaggerGen(gen =>
             {
                 gen.OperationFilter<AddResponseHeadersFilter>();
                 gen.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
-
-                // add token to header, must have
                 gen.OperationFilter<SecurityRequirementsOperationFilter>();
-
-                // must be oauth2
                 gen.SwaggerDoc("v1.0", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Book Stores API Doc", Version = "v1.0" });
                 gen.AddSecurityDefinition("oauth2", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
                 {
