@@ -160,3 +160,4 @@ C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\obj\Deb
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\obj\Debug\net5.0\ref\BookStoresBackend.dll
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\obj\Debug\net5.0\BookStoresBackend.pdb
 C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\obj\Debug\net5.0\BookStoresBackend.genruntimeconfig.cache
+C:\Users\HarryYan\Desktop\Repos\Edu-BookStores\Project\BookStoresBackend\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

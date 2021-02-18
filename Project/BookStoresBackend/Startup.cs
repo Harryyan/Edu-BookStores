@@ -1,4 +1,5 @@
 using BookStores.Models;
+using BookStoresBackend.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -53,10 +54,7 @@ namespace BookStoresBackend
             });
 
             // JWT Setting
-            var jwtSection = Configuration.GetSection("JWTSettings");
-            services.Configure<JWTSettings>(jwtSection);
-            var appSettings = jwtSection.Get<JWTSettings>();
-            var key = Encoding.ASCII.GetBytes(appSettings.SecretKey);
+            var jwtSection = Configuration.GetSection("JWTTokenConfg").Get<JWTTokenConfig>();
 
             services.AddAuthentication(x =>
             {
@@ -70,14 +68,11 @@ namespace BookStoresBackend
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ClockSkew = TimeSpan.Zero
+                    IssuerSigningKey = new SymmetricSecurityKey(Convert.FromBase64String(jwtSection.TokenSigningKeyBase64)),
+                    ValidIssuer = jwtSection.TokenIssuer,
+                    ValidAudiences = jwtSection.Audiences
                 };
             });
-
-            services.AddCors();
         }
 
         // config pipes
