@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BookStoresBackend.Authorization
 {
-    public class AdminRoleHandler : AuthorizationHandler
+    public class AdminRoleHandler : AuthorizationHandler<AdminRequirement>
     {
+        protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, AdminRequirement requirement)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

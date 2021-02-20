@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "DlrJQq6n7Dej7ZSEd9c4gSULIz0wA65vW2fqLnx2hkiOOLi1PW13dM56v4qDzyLmLbtdepeaWo7FmzIGNZs4Lw==",
+  "dgSpecHash": "1kUKxgIx83UPsEPbudle+NDU0NlzEECMR3B4z9yJKPnWZjMDCdE4fDfbAkS4RtpJmHr6lEyW99Qzx91mRalkiA==",
   "success": true,
   "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\Project\\BookStoresBackend\\BookStoresBackend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HarryYan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.3\\microsoft.aspnetcore.authentication.jwtbearer.5.0.3.nupkg.sha512",
+    "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.3\\microsoft.aspnetcore.authorization.5.0.3.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.10\\microsoft.aspnetcore.jsonpatch.3.1.10.nupkg.sha512",
+    "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.3\\microsoft.aspnetcore.metadata.5.0.3.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.10\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.10.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
