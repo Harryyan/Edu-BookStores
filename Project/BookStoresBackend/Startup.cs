@@ -1,6 +1,8 @@
 using BookStores.Models;
+using BookStoresBackend.Authorization;
 using BookStoresBackend.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -72,6 +74,13 @@ namespace BookStoresBackend
                     ValidIssuer = jwtSection.TokenIssuer,
                     ValidAudiences = jwtSection.Audiences
                 };
+            });
+
+            services.AddSingleton<IAuthorizationHandler, AdminRoleHandler>();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Admin", policy =>
+                    policy.Requirements.Add(new AdminRequirement()));
             });
         }
 

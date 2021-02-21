@@ -10,7 +10,12 @@ namespace BookStoresBackend.Authorization
     {
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, AdminRequirement requirement)
         {
-            throw new NotImplementedException();
+            if (context.User.IsInRole("Administrator"))
+            {
+                context.Succeed(requirement);
+            }
+
+            return Task.CompletedTask;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace BookStoresBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Policy = "Admin")]
     public class UsersController : ControllerBase
     {
         private readonly BookStoresDBContext _context;
