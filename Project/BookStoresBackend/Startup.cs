@@ -35,7 +35,7 @@ namespace BookStoresBackend
 
             // DB Context
             var connectionString = Configuration.GetConnectionString("BookStoresDB");
-            services.AddDbContext<BookStoresDBContext>(options => options.UseSqlServer(connectionString));
+            //services.AddDbContext<BookStoresDBContext>(options => options.UseSqlServer(connectionString));
 
             services.AddMvc()
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);

@@ -1,29 +1,21 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
-
-#nullable disable
 
 namespace BookStores.Models
 {
-    public partial class User
+    public class User : IdentityUser<Guid>
     {
-        public User()
-        {
-            RefreshTokens = new HashSet<RefreshToken>();
-        }
+        public string NickName { get; set; }
 
-        public Guid UserId { get; set; }
-        public string EmailAddress { get; set; }
-        public string Password { get; set; }
-        public string Source { get; set; }
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string LastName { get; set; }
-        public short RoleId { get; set; }
-        public int PubId { get; set; }
-        public DateTime? HireDate { get; set; }
-        public virtual Publisher Pub { get; set; }
-        public virtual Role Role { get; set; }
-        public virtual ICollection<RefreshToken> RefreshTokens { get; set; }
+        public int Gender { get; set; }
+
+        public ICollection<IdentityUserClaim<string>> Claims { get; set; }
+
+        public ICollection<IdentityUserLogin<string>> Logins { get; set; }
+
+        public ICollection<IdentityUserToken<string>> Tokens { get; set; }
+
+        public ICollection<IdentityUserRole<string>> UserRoles { get; set; }
     }
 }
