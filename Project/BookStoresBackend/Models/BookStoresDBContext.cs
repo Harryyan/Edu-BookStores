@@ -1,9 +1,8 @@
-﻿using System.Data.Entity;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace BookStores.Models
 {
-    public partial class BookStoresDBContext : IdentityDbContext<User>
+    public partial class BookStoresDBContext<TUser>: IdentityDbContext<TUser> where TUser : IdentityUser
     {
         public BookStoresDBContext() : base("BookStores") { }
 
