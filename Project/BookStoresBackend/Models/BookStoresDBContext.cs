@@ -1,14 +1,17 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStores.Models
 {
-    public partial class BookStoresDBContext<TUser>: IdentityDbContext<TUser> where TUser : IdentityUser
+    public partial class BookStoresDBContext : IdentityDbContext<User>
     {
-        public BookStoresDBContext() : base("BookStores") { }
+        public BookStoresDBContext(DbContextOptions<BookStoresDBContext> options)
+            : base(options)
+        { }
 
-        public BookStoresDBContext(string connectionString) : base(connectionString)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-
+            base.OnModelCreating(builder);
         }
     }
 }

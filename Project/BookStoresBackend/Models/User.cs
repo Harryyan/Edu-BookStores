@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BookStores.Models
 {
-    public class User : IdentityUser<Guid>
+    public class User : IdentityUser
     {
         public string NickName { get; set; }
 
