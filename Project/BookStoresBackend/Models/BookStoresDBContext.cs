@@ -1,17 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace BookStores.Models
 {
-    public class BookStoresDBContext : IdentityDbContext<User>
+    public class BookStoresDBContext : IdentityDbContext<ApplicationUser, CustomRole, Guid, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
-        public BookStoresDBContext(DbContextOptions<BookStoresDBContext> options)
-            : base(options)
-        { }
-
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-        }
+        
     }
 }
