@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookStores.Models
 {
-    public partial class BookStoresDBContext : IdentityDbContext<User>
+    public class BookStoresDBContext : IdentityDbContext<User>
     {
         public BookStoresDBContext(DbContextOptions<BookStoresDBContext> options)
             : base(options)
