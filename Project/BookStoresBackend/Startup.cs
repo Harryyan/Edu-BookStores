@@ -1,6 +1,4 @@
-using BookStores.Models;
 using BookStoresBackend.Authorization;
-using BookStoresBackend.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -12,7 +10,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
-using Swashbuckle.AspNetCore.Filters;
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -21,6 +18,8 @@ using BookStoresBackend.Swagger;
 using Microsoft.Extensions.PlatformAbstractions;
 using System.Reflection;
 using System.IO;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using BookStoresBackend.Models;
 
 namespace BookStoresBackend
 {
@@ -35,11 +34,11 @@ namespace BookStoresBackend
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = Configuration.GetConnectionString("BookStoresDB");
+            var connectionString = Configuration.GetConnectionString("BookStoreDB");
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            services.AddDbContext<BookStoresDBContext>(opt => opt.UseSqlServer(connectionString));
+            services.AddDbContext<BookStoreContext>(opt => opt.UseSqlServer(connectionString));
 
             services.AddControllers();
 
@@ -49,6 +48,7 @@ namespace BookStoresBackend
                 options.AssumeDefaultVersionWhenUnspecified = true;
             });
 
+            services.AddVersionedApiExplorer();
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
             services.AddSwaggerGen(
                 options =>
@@ -91,21 +91,14 @@ namespace BookStoresBackend
         }
 
         // config pipes
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(ui => ui.SwaggerEndpoint("/swagger/v1.0/swagger.json", "Book Store API Doc"));
             }
 
-            app.UseCors(builder => builder
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
-
-            app.UseHttpsRedirection();
+            app.UseRouting();
 
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
@@ -114,6 +107,17 @@ namespace BookStoresBackend
             app.UseDefaultFiles(options).UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(
+                options =>
+                {
+                    // build a swagger endpoint for each discovered API version
+                    foreach (var description in provider.ApiVersionDescriptions)
+                    {
+                        options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
+                    }
+                });
 
             app.UseAuthentication();
 

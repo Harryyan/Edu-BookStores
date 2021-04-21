@@ -1,11 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BookStoresBackend
 {
@@ -13,7 +8,6 @@ namespace BookStoresBackend
     {
         public static void Main(string[] args)
         {
-            // start up server
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -22,7 +16,14 @@ namespace BookStoresBackend
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder
+                        .ConfigureAppConfiguration((hostingContext, config) =>
+                        {
+                            config.SetBasePath(hostingContext.HostingEnvironment.ContentRootPath);
+                            config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                            config.AddEnvironmentVariables();
+                        })
+                        .UseStartup<Startup>();
                 });
     }
 }

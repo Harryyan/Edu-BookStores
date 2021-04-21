@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 #nullable disable
 
-namespace BookStores.Models
+namespace BookStoresBackend.Models
 {
-    public class Role: IdentityRole
+    public partial class Role
     {
         public Role()
         {

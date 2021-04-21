@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace BookStores.Models
+namespace BookStoresBackend.Models
 {
     public partial class Publisher
     {
