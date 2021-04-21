@@ -5,9 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -16,7 +14,13 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Filters;
 using System;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using BookStoresBackend.Swagger;
+using Microsoft.Extensions.PlatformAbstractions;
+using System.Reflection;
+using System.IO;
 
 namespace BookStoresBackend
 {
@@ -29,33 +33,34 @@ namespace BookStoresBackend
 
         public IConfiguration Configuration { get; }
 
-        // config DI
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = Configuration.GetConnectionString("BookStoresDB");
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddDbContext<BookStoresDBContext>(opt => opt.UseSqlServer(connectionString));
+
             services.AddControllers();
 
-            // DB Context
-            var connectionString = Configuration.GetConnectionString("BookStoresDB");
-            //services.AddDbContext<BookStoresDBContext>(options => options.UseSqlServer(connectionString));
-
-            services.AddMvc()
-                .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
-
-            services.AddSwaggerGen(gen =>
+            services.AddApiVersioning(options =>
             {
-                gen.OperationFilter<AddResponseHeadersFilter>();
-                gen.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
-                gen.OperationFilter<SecurityRequirementsOperationFilter>();
-                gen.SwaggerDoc("v1.0", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Book Stores API Doc", Version = "v1.0" });
-                gen.AddSecurityDefinition("oauth2", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-                {
-                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-                    Name = "Authorization",
-                    In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey
-                });
+                options.ReportApiVersions = true;
+                options.AssumeDefaultVersionWhenUnspecified = true;
             });
 
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
+            services.AddSwaggerGen(
+                options =>
+                {
+                    // add a custom operation filter which sets default values
+                    options.OperationFilter<SwaggerDefaultValues>();
+
+                    // integrate xml comments
+                    options.IncludeXmlComments(XmlCommentsFilePath);
+                });
+
+            /*
             // JWT Setting
             var jwtSection = Configuration.GetSection("JWTTokenConfg").Get<JWTTokenConfig>();
 
@@ -82,7 +87,7 @@ namespace BookStoresBackend
             {
                 options.AddPolicy("Admin", policy =>
                     policy.Requirements.Add(new AdminRequirement()));
-            });
+            });*/
         }
 
         // config pipes
@@ -118,6 +123,16 @@ namespace BookStoresBackend
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private static string XmlCommentsFilePath
+        {
+            get
+            {
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                var fileName = typeof(Startup).GetTypeInfo().Assembly.GetName().Name + ".xml";
+                return Path.Combine(basePath, fileName);
+            }
         }
     }
 }

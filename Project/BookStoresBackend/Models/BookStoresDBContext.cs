@@ -5,7 +5,7 @@ using System;
 
 namespace BookStores.Models
 {
-    public class BookStoresDBContext : IdentityDbContext<ApplicationUser, CustomRole, Guid, CustomUserLogin, CustomUserRole, CustomUserClaim>
+    public class BookStoresDBContext : DbContext
     {
         
     }
