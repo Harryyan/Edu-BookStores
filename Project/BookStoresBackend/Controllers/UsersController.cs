@@ -1,32 +1,38 @@
-﻿/*using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookStoresBackend.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BookStores.Models;
+using BookStoresBackend.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Options;
+using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace BookStoresBackend.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
-    [Authorize(Policy = "Admin")]
     public class UsersController : ControllerBase
     {
-        private readonly BookStoresDBContext _context;
+        private readonly BookStoreContext _context;
+        private readonly IOptions<JWTConfig> _jwtOptions;
 
-        public UsersController(BookStoresDBContext context)
+        public UsersController(BookStoreContext context, IOptions<JWTConfig> option)
         {
             _context = context;
+            _jwtOptions = option;
         }
 
+        // GET: api/Users
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
 
+        // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -40,6 +46,8 @@ namespace BookStoresBackend.Controllers
             return user;
         }
 
+        // PUT: api/Users/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
@@ -69,20 +77,42 @@ namespace BookStoresBackend.Controllers
             return NoContent();
         }
 
-        // POST: api/Users
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        #region Login & Register
+        /// <summary>
+        /// Sign Up a user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        [ProducesResponseType(typeof(ComplexToken), Status200OK)]
+        [ProducesResponseType(Status400BadRequest)]
+        public async Task<ActionResult<ComplexToken>> Register([FromBody] User user)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var result = await _context.Users.AnyAsync(u => u.EmailAddress == user.EmailAddress);
+
+            if (result)
+            {
+                return BadRequest("The User Already Existed!");
+            }
+
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = user.UserId }, user);
+            var token = new TokenHelper(_jwtOptions).CreateToken(user);
+
+            return Ok(token);
         }
 
+        #endregion
+
+        // DELETE: api/Users/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<User>> DeleteUser(int id)
+        public async Task<IActionResult> DeleteUser(int id)
         {
             var user = await _context.Users.FindAsync(id);
             if (user == null)
@@ -93,7 +123,7 @@ namespace BookStoresBackend.Controllers
             _context.Users.Remove(user);
             await _context.SaveChangesAsync();
 
-            return user;
+            return NoContent();
         }
 
         private bool UserExists(int id)
@@ -102,4 +132,3 @@ namespace BookStoresBackend.Controllers
         }
     }
 }
-*/

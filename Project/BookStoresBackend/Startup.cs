@@ -60,9 +60,8 @@ namespace BookStoresBackend
                     options.IncludeXmlComments(XmlCommentsFilePath);
                 });
 
-            /*
-            // JWT Setting
-            var jwtSection = Configuration.GetSection("JWTTokenConfg").Get<JWTTokenConfig>();
+
+            var jwtSection = Configuration.GetSection("JWT").Get<JWTConfig>();
 
             services.AddAuthentication(x =>
             {
@@ -76,18 +75,18 @@ namespace BookStoresBackend
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Convert.FromBase64String(jwtSection.TokenSigningKeyBase64)),
-                    ValidIssuer = jwtSection.TokenIssuer,
-                    ValidAudiences = jwtSection.Audiences
+                    IssuerSigningKey = new SymmetricSecurityKey(Convert.FromBase64String(jwtSection.IssuerSigningKey)),
                 };
             });
 
-            services.AddSingleton<IAuthorizationHandler, AdminRoleHandler>();
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("Admin", policy =>
-                    policy.Requirements.Add(new AdminRequirement()));
-            });*/
+            /*            services.AddSingleton<IAuthorizationHandler, AdminRoleHandler>();
+                        services.AddAuthorization(options =>
+                        {
+                            options.AddPolicy("Admin", policy =>
+                                policy.Requirements.Add(new AdminRequirement()));
+                        });*/
+
+            services.AddSingleton<ITokenHelper, TokenHelper>();
         }
 
         // config pipes

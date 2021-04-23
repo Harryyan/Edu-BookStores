@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GHE15U1hbSx7no3obYJnh01Z9J5BxWZbvdcGZH3cRIlkUd9y9eUHUeUasbVyzQRfSiwuFjoBe8FLNMt3DsAQ+w==",
+  "dgSpecHash": "4Os9n71XZDrOzls04lzZv/4axjev6dJSiqEkeiBRhiLHhsqDdcodNCH0UFuiwwuXzD0AesH8MYV3Y+rhSYE/FQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\Project\\BookStoresBackend\\BookStoresBackend.csproj",
   "expectedPackageFiles": [
@@ -35,12 +35,12 @@
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.5\\microsoft.entityframeworkcore.5.0.5.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.5\\microsoft.entityframeworkcore.abstractions.5.0.5.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.5\\microsoft.entityframeworkcore.analyzers.5.0.5.nupkg.sha512",
-    "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.5\\microsoft.entityframeworkcore.design.5.0.5.nupkg.sha512",
+    "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.4\\microsoft.entityframeworkcore.design.5.0.4.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.5\\microsoft.entityframeworkcore.relational.5.0.5.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\5.0.5\\microsoft.entityframeworkcore.sqlite.5.0.5.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\5.0.5\\microsoft.entityframeworkcore.sqlite.core.5.0.5.nupkg.sha512",
-    "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.2\\microsoft.entityframeworkcore.sqlserver.5.0.2.nupkg.sha512",
-    "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.5\\microsoft.entityframeworkcore.tools.5.0.5.nupkg.sha512",
+    "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.4\\microsoft.entityframeworkcore.sqlserver.5.0.4.nupkg.sha512",
+    "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.4\\microsoft.entityframeworkcore.tools.5.0.4.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\HarryYan\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",

@@ -13,9 +13,6 @@
         "packagesPath": "C:\\Users\\HarryYan\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\HarryYan\\Desktop\\Repos\\Edu-BookStores\\WebApi_Course\\WebAPI_06_JWT_Auth_Refresh\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\HarryYan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -26,6 +23,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/vmob/_packaging/Plexure.Services/nuget/v3/index.json": {},
           "https://vmob.pkgs.visualstudio.com/_packaging/Plexure/nuget/v3/index.json": {}
         },
         "frameworks": {
@@ -89,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
