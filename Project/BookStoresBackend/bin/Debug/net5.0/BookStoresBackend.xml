@@ -4,6 +4,60 @@
         <name>BookStoresBackend</name>
     </assembly>
     <members>
+        <member name="M:BookStoresBackend.Authorization.TokenHelper.#ctor(BookStoresBackend.Models.JWTConfig)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:BookStoresBackend.Authorization.TokenHelper.CreateToken(BookStoresBackend.Models.User)">
+            <summary>
+            Create new access token
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStoresBackend.Controllers.UsersController.#ctor(BookStoresBackend.Models.BookStoreContext,BookStoresBackend.Models.JWTConfig)">
+            <summary>
+            Init
+            </summary>
+            <param name="context"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:BookStoresBackend.Controllers.UsersController.GetUsers">
+            <summary>
+            Get all users
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookStoresBackend.Controllers.UsersController.GetUser(System.Guid)">
+            <summary>
+            Get user by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStoresBackend.Controllers.UsersController.GetUser(System.String)">
+            <summary>
+            Get user by Email
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStoresBackend.Controllers.UsersController.Register(BookStoresBackend.Models.User)">
+            <summary>
+            Sign Up a user
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStoresBackend.Controllers.UsersController.Login(BookStoresBackend.Models.User)">
+            <summary>
+            Login with email and password
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
         <member name="M:BookStoresBackend.Swagger.ConfigureSwaggerOptions.#ctor(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
             <summary>
             Initializes a new instance of the <see cref="T:BookStoresBackend.Swagger.ConfigureSwaggerOptions"/> class.

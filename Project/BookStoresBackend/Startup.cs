@@ -20,6 +20,7 @@ using System.Reflection;
 using System.IO;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using BookStoresBackend.Models;
+using System.Text;
 
 namespace BookStoresBackend
 {
@@ -61,8 +62,10 @@ namespace BookStoresBackend
                 });
 
 
-            var jwtSection = Configuration.GetSection("JWT").Get<JWTConfig>();
+            var jwtConfig = new JWTConfig();
+            Configuration.GetSection("JWT").Bind(jwtConfig);
 
+            var key = Encoding.ASCII.GetBytes(jwtConfig.IssuerSigningKey);
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -75,7 +78,7 @@ namespace BookStoresBackend
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Convert.FromBase64String(jwtSection.IssuerSigningKey)),
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
                 };
             });
 
@@ -87,6 +90,7 @@ namespace BookStoresBackend
                         });*/
 
             services.AddSingleton<ITokenHelper, TokenHelper>();
+            services.AddSingleton(jwtConfig);
         }
 
         // config pipes

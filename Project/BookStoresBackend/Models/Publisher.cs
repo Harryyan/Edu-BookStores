@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BookStoresBackend.Models
 {
-    public partial class Publisher
+    public class Publisher
     {
         public Publisher()
         {
@@ -13,7 +13,7 @@ namespace BookStoresBackend.Models
             Users = new HashSet<User>();
         }
 
-        public int PubId { get; set; }
+        public Guid Id { get; set; }
         public string PublisherName { get; set; }
         public string City { get; set; }
         public string State { get; set; }

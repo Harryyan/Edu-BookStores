@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BookStoresBackend.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BookStoresBackend.Models;
+using BookStoresBackend.Models.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 using static Microsoft.AspNetCore.Http.StatusCodes;
@@ -12,29 +14,43 @@ using static Microsoft.AspNetCore.Http.StatusCodes;
 namespace BookStoresBackend.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     [ApiController]
     public class UsersController : ControllerBase
     {
         private readonly BookStoreContext _context;
-        private readonly IOptions<JWTConfig> _jwtOptions;
+        private readonly JWTConfig _jwtConfig;
 
-        public UsersController(BookStoreContext context, IOptions<JWTConfig> option)
+        /// <summary>
+        /// Init
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="config"></param>
+        public UsersController(BookStoreContext context, JWTConfig config)
         {
             _context = context;
-            _jwtOptions = option;
+            _jwtConfig = config;
         }
 
-        // GET: api/Users
+        /// <summary>
+        /// Get all users
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        [ProducesResponseType(typeof(List<User>), Status200OK)]
+        public IActionResult GetUsers()
         {
-            return await _context.Users.ToListAsync();
+            return Ok(_context.Users.AsQueryable());
         }
 
-        // GET: api/Users/5
+        /// <summary>
+        /// Get user by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        [ProducesResponseType(typeof(User), Status200OK)]
+        [ProducesResponseType(Status404NotFound)]
+        public async Task<IActionResult> GetUser(Guid id)
         {
             var user = await _context.Users.FindAsync(id);
 
@@ -43,38 +59,27 @@ namespace BookStoresBackend.Controllers
                 return NotFound();
             }
 
-            return user;
+            return Ok(user);
         }
 
-        // PUT: api/Users/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        /// <summary>
+        /// Get user by Email
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        [HttpGet("{email}")]
+        [ProducesResponseType(typeof(User), Status200OK)]
+        [ProducesResponseType(Status404NotFound)]
+        public async Task<IActionResult> GetUser(string email)
         {
-            if (id != user.UserId)
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.EmailAddress == email);
+
+            if (user == null)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return Ok(user);
         }
 
         #region Login & Register
@@ -83,10 +88,11 @@ namespace BookStoresBackend.Controllers
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        [HttpPost]
-        [ProducesResponseType(typeof(ComplexToken), Status200OK)]
+        [HttpPost("Register")]
+        [ProducesResponseType(Status201Created)]
         [ProducesResponseType(Status400BadRequest)]
-        public async Task<ActionResult<ComplexToken>> Register([FromBody] User user)
+        [ProducesResponseType(Status409Conflict)]
+        public async Task<IActionResult> Register([FromBody] User user)
         {
             if (!ModelState.IsValid)
             {
@@ -97,38 +103,48 @@ namespace BookStoresBackend.Controllers
 
             if (result)
             {
-                return BadRequest("The User Already Existed!");
+                return Conflict("The User Already Existed!");
+            }
+
+            if (user.EmailAddress == null || user.Password == null || user.Password.Length < 6)
+            {
+                return BadRequest("Parameters Wrong!");
             }
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            var token = new TokenHelper(_jwtOptions).CreateToken(user);
+            return CreatedAtAction(nameof(GetUser), new { email = user.EmailAddress }, user);
+        }
 
-            return Ok(token);
+        /// <summary>
+        /// Login with email and password
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [HttpPost("Login")]
+        [ProducesResponseType(typeof(ComplexToken), Status200OK)]
+        [ProducesResponseType(Status400BadRequest)]
+        public async Task<IActionResult> Login([FromBody] User user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var result = await _context.Users.FirstOrDefaultAsync(u => u.EmailAddress == user.EmailAddress);
+
+            if (result == null)
+            {
+                return BadRequest("User Not Exists!");
+            }
+
+            var complexToken = new TokenHelper(_jwtConfig).CreateToken(result);
+            var response = new LoginResponse(result, complexToken.AccessToken);
+
+            return Ok(response);
         }
 
         #endregion
-
-        // DELETE: api/Users/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(int id)
-        {
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            _context.Users.Remove(user);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool UserExists(int id)
-        {
-            return _context.Users.Any(e => e.UserId == id);
-        }
     }
 }
